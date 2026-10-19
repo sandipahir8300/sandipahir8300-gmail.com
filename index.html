@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#123c70">
+    <title>Home Loan Service | હોમ લોન સેવા</title>
+    <meta name="description"
+        content="Home loan guidance and assistance. Contact Home Loan Service for eligibility guidance, EMI estimates and document checklist.">
+    <style>
+        :root {
+            --navy: #123c70;
+            --blue: #1769aa;
+            --gold: #f4b942;
+            --ink: #17243a;
+            --muted: #607086;
+            --bg: #f5f8fc;
+            --white: #fff;
+            --line: #dce5ef
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, "Noto Sans Gujarati", sans-serif;
+            color: var(--ink);
+            background: var(--bg);
+            line-height: 1.6
+        }
+
+        a {
+            color: inherit
+        }
+
+        .wrap {
+            width: min(1120px, 92%);
+            margin: auto
+        }
+
+        .topbar {
+            background: #0d2b50;
+            color: #fff;
+            padding: 8px 0;
+            font-size: 14px
+        }
+
+        .topbar .wrap {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap
+        }
+
+        header {
+            background: #fff;
+            border-bottom: 1px solid var(--line);
+            position: sticky;
+            top: 0;
+            z-index: 5
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 14px 0
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            font-weight: 800;
+            color: var(--navy);
+            font-size: 20px
+        }
+
+        .logo {
+            display: grid;
+            place-items: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: var(--navy);
+            color: white;
+            font-size: 24px
+        }
+
+        .navlinks {
+            display: flex;
+            gap: 20px;
+            align-items: center
+        }
+
+        .navlinks a {
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px
+        }
+
+        .btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 18px;
+            border-radius: 10px;
+            border: 0;
+            text-decoration: none;
+            font-weight: 800;
+            cursor: pointer
+        }
+
+        .btn-primary {
+            background: var(--blue);
+            color: white
+        }
+
+        .btn-whatsapp {
+            background: #159b59;
+            color: white
+        }
+
+        .btn-outline {
+            border: 1px solid var(--line);
+            background: white;
+            color: var(--navy)
+        }
+
+        .hero {
+            background: linear-gradient(120deg, #102f56 0%, #1769aa 100%);
+            color: #fff;
+            padding: 68px 0 72px;
+            overflow: hidden
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 40px;
+            align-items: center
+        }
+
+        .eyebrow {
+            color: #ffda82;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 13px
+        }
+
+        .hero h1 {
+            font-size: clamp(34px, 5vw, 54px);
+            line-height: 1.12;
+            margin: 12px 0 18px
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #e4effb;
+            max-width: 650px
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 24px
+        }
+
+        .hero .btn-outline {
+            background: #fff;
+            color: var(--navy)
+        }
+
+        .hero-card {
+            background: #fff;
+            color: var(--ink);
+            padding: 26px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px #071b3b55
+        }
+
+        .hero-card h2 {
+            margin: 0 0 8px;
+            color: var(--navy)
+        }
+
+        .hero-card p {
+            font-size: 14px;
+            color: var(--muted);
+            margin: 0 0 18px
+        }
+
+        .quick {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px
+        }
+
+        .quick div {
+            padding: 14px;
+            border-radius: 12px;
+            background: #f0f6fc
+        }
+
+        .quick strong {
+            display: block;
+            color: var(--navy);
+            font-size: 18px
+        }
+
+        .quick span {
+            font-size: 12px;
+            color: var(--muted)
+        }
+
+        section {
+            padding: 58px 0
+        }
+
+        .section-head {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 30px
+        }
+
+        .section-head h2 {
+            font-size: clamp(27px, 3vw, 36px);
+            margin: 0 0 8px;
+            color: var(--navy)
+        }
+
+        .section-head p {
+            color: var(--muted);
+            margin: 0
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 24px
+        }
+
+        .card .emoji {
+            font-size: 28px
+        }
+
+        .card h3 {
+            margin: 12px 0 6px;
+            color: var(--navy)
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 15px
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            align-items: start
+        }
+
+        .panel {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 26px
+        }
+
+        .panel h3 {
+            margin-top: 0;
+            color: var(--navy)
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 700;
+            margin: 12px 0 6px
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd8e6;
+            border-radius: 9px;
+            font: inherit;
+            background: #fff;
+            color: var(--ink)
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: 2px solid #8ec7f5;
+            border-color: var(--blue)
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px 12px
+        }
+
+        .result {
+            background: #edf6ff;
+            border-radius: 12px;
+            padding: 16px;
+            margin-top: 16px
+        }
+
+        .result strong {
+            display: block;
+            font-size: 25px;
+            color: var(--navy)
+        }
+
+        .muted {
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        .checklist {
+            padding-left: 20px
+        }
+
+        .checklist li {
+            padding: 5px 0
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px
+        }
+
+        .contact-line {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--line)
+        }
+
+        .contact-line:last-child {
+            border: 0
+        }
+
+        .contact-line strong {
+            display: block;
+            color: var(--navy)
+        }
+
+        .disclaimer {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 18px
+        }
+
+        footer {
+            background: #0d2b50;
+            color: #e6eef8;
+            padding: 28px 0;
+            font-size: 13px
+        }
+
+        .footer-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap
+        }
+
+        .mobile-cta {
+            display: none
+        }
+
+        @media(max-width:760px) {
+            .navlinks {
+                display: none
+            }
+
+            .hero {
+                padding: 48px 0
+            }
+
+            .hero-grid,
+            .two-col,
+            .contact-grid {
+                grid-template-columns: 1fr
+            }
+
+            .cards {
+                grid-template-columns: 1fr
+            }
+
+            .hero-card {
+                max-width: 520px
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr
+            }
+
+            .mobile-cta {
+                display: flex;
+                position: fixed;
+                bottom: 12px;
+                left: 4%;
+                width: 92%;
+                z-index: 10;
+                box-shadow: 0 8px 24px #0003
+            }
+
+            .mobile-cta .btn {
+                flex: 1
+            }
+
+            .hero-actions .btn {
+                width: 100%
+            }
+
+            section {
+                padding: 44px 0
+            }
+
+            footer {
+                padding-bottom: 86px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topbar">
+        <div class="wrap"><span>🏠 Home Loan Service | હોમ લોન સેવા</span><span>Gujarati + English support</span></div>
+    </div>
+    <header>
+        <div class="wrap nav">
+            <a class="brand" href="#home"><span class="logo">⌂</span><span>Home Loan Service<small
+                        style="display:block;font-size:11px;font-weight:600;color:#607086">હોમ લોન
+                        માર્ગદર્શન</small></span></a>
+            <nav class="navlinks"><a href="#services">Services</a><a href="#emi">EMI Calculator</a><a
+                    href="#documents">Documents</a><a href="#contact">Contact</a></nav>
+            <a class="btn btn-primary" href="#contact">Contact Us</a>
+        </div>
+    </header>
+    <main>
+        <section class="hero" id="home">
+            <div class="wrap hero-grid">
+                <div>
+                    <div class="eyebrow">Your home loan assistance partner</div>
+                    <h1>તમારા પોતાના ઘરના સપનાને સાકાર કરવા માટે માર્ગદર્શન</h1>
+                    <p>Home loan eligibility guidance, EMI estimates and document checklist — સરળ સમજણ સાથે Gujarati અને
+                        English માં સહાય.</p>
+                    <div class="hero-actions"><a class="btn btn-whatsapp"
+                            href="https://wa.me/919429685511?text=Hello%2C%20I%20need%20home%20loan%20assistance."
+                            target="_blank" rel="noopener">WhatsApp Inquiry ↗</a><a class="btn btn-outline"
+                            href="#emi">Calculate EMI</a></div>
+                    <p style="font-size:13px;margin-top:16px">DSA / Loan Consultancy • Lender options depend on
+                        eligibility and lender policy</p>
+                </div>
+                <div class="hero-card">
+                    <h2>Get started today</h2>
+                    <p>Share a few details to discuss your home loan requirements.</p>
+                    <div class="quick">
+                        <div><strong>🏡 Home Loan</strong><span>Purchase / construction</span></div>
+                        <div><strong>📋 Guidance</strong><span>Document checklist</span></div>
+                        <div><strong>🧮 EMI Estimate</strong><span>Plan your budget</span></div>
+                        <div><strong>💬 Direct Contact</strong><span>WhatsApp assistance</span></div>
+                    </div><a class="btn btn-primary" style="width:100%;margin-top:18px" href="#contact">Request a Call
+                        Back</a>
+                </div>
+            </div>
+        </section>
+        <section id="services">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2>How I can help | મારી સેવાઓ</h2>
+                    <p>Guidance throughout the home loan application journey.</p>
+                </div>
+                <div class="cards">
+                    <div class="card">
+                        <div class="emoji">🏠</div>
+                        <h3>Home Loan Guidance</h3>
+                        <p>તમારી જરૂરિયાત અને અંદાજિત પાત્રતા મુજબ હોમ લોન પ્રક્રિયા સમજવામાં સહાય.</p>
+                    </div>
+                    <div class="card">
+                        <div class="emoji">🧮</div>
+                        <h3>EMI Planning</h3>
+                        <p>Loan amount, interest rate and tenureના આધારે અંદાજિત EMI ગણો.</p>
+                    </div>
+                    <div class="card">
+                        <div class="emoji">📑</div>
+                        <h3>Document Checklist</h3>
+                        <p>સામાન્ય રીતે જરૂરી આવક, ઓળખ અને પ્રોપર્ટી દસ્તાવેજોની યાદી મેળવવા સહાય.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="emi" style="background:#edf3fa">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2>Home Loan EMI Calculator</h2>
+                    <p>તમારા અંદાજિત માસિક હપ્તાની ગણતરી કરો. Actual offer lender પ્રમાણે બદલાઈ શકે છે.</p>
+                </div>
+                <div class="two-col">
+                    <div class="panel">
+                        <h3>Loan details</h3>
+                        <div class="form-grid">
+                            <div><label for="amount">Loan amount (₹)</label><input id="amount" type="number" min="10000"
+                                    step="10000" value="2500000"></div>
+                            <div><label for="rate">Annual interest (%)</label><input id="rate" type="number" min="0"
+                                    max="40" step="0.1" value="8.5"></div>
+                            <div><label for="years">Tenure (years)</label><input id="years" type="number" min="1"
+                                    max="40" step="1" value="20"></div>
+                        </div><button class="btn btn-primary" style="margin-top:18px" onclick="calculateEMI()">Calculate
+                            EMI</button>
+                        <div class="result" aria-live="polite"><span>Estimated monthly EMI</span><strong
+                                id="emiValue">₹21,696</strong><span class="muted" id="emiDetails">Total interest and
+                                repayment estimates</span></div>
+                    </div>
+                    <div class="panel">
+                        <h3>What this estimate means</h3>
+                        <ul class="checklist">
+                            <li>EMI is based on the loan amount, interest rate and tenure you enter.</li>
+                            <li>Processing fees, insurance, taxes and other charges are not included.</li>
+                            <li>The lender will decide final eligibility, rate, terms and approval.</li>
+                        </ul><a class="btn btn-whatsapp"
+                            href="https://wa.me/919429685511?text=Hello%2C%20please%20help%20me%20understand%20my%20home%20loan%20EMI."
+                            target="_blank" rel="noopener">Discuss My EMI on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="documents">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2>Common document checklist</h2>
+                    <p>દસ્તાવેજોની જરૂરિયાત ગ્રાહક, નોકરી/વ્યવસાય અને lender પ્રમાણે બદલાઈ શકે છે.</p>
+                </div>
+                <div class="cards">
+                    <div class="card">
+                        <h3>Identity & Address</h3>
+                        <ul class="checklist">
+                            <li>PAN card</li>
+                            <li>Aadhaar / accepted address proof</li>
+                            <li>Photographs and contact details</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Income Documents</h3>
+                        <ul class="checklist">
+                            <li>Salary slips / business income proof</li>
+                            <li>Bank statements</li>
+                            <li>ITR / Form 16, if applicable</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Property Documents</h3>
+                        <ul class="checklist">
+                            <li>Property papers / agreement, if available</li>
+                            <li>Builder or seller details</li>
+                            <li>Additional papers requested by lender</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="disclaimer">Please do not send Aadhaar, PAN, bank statements or other sensitive documents
+                    through this public website. First verify the agent and lender's official process, then use a secure
+                    channel.</p>
+            </div>
+        </section>
+        <section id="contact" style="background:#edf3fa">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2>Contact me | સંપર્ક કરો</h2>
+                    <p>તમારી વિગતો ભરીને WhatsApp પર inquiry મોકલો.</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="panel">
+                        <h3>Request a call back</h3>
+                        <form id="inquiryForm"><label for="name">Full name / પૂરું નામ</label><input id="name"
+                                name="name" autocomplete="name" required placeholder="Enter your name">
+                            <div class="form-grid">
+                                <div><label for="phone">Mobile number</label><input id="phone" name="phone"
+                                        inputmode="tel" pattern="[0-9 +()-]{10,16}" required
+                                        placeholder="Your mobile number"></div>
+                                <div><label for="need">Loan requirement</label><select id="need" name="need">
+                                        <option>New home purchase</option>
+                                        <option>Construction</option>
+                                        <option>Balance transfer</option>
+                                        <option>Other</option>
+                                    </select></div>
+                            </div><label for="message">Message / તમારી જરૂરિયાત</label><textarea id="message"
+                                name="message" rows="3"
+                                placeholder="Approximate loan amount or any question (optional)"></textarea><button
+                                class="btn btn-whatsapp" type="submit" style="width:100%;margin-top:16px">Send Inquiry
+                                on WhatsApp ↗</button>
+                            <p class="muted">Submit કરવાથી WhatsApp ખુલશે. સંદેશ મોકલતા પહેલાં તમે તેને ચકાસી શકો છો.
+                            </p>
+                        </form>
+                    </div>
+                    <div class="panel">
+                        <h3>Direct contact</h3>
+                        <div class="contact-line"><strong>WhatsApp / Mobile</strong><a href="https://wa.me/918780668363"
+                                target="_blank" rel="noopener">+918780668363 </a></div>
+                        <div class="contact-line"><strong>Service</strong>Home Loan DSA / Loan Consultancy</div>
+                        <div class="contact-line"><strong>Languages</strong>Gujarati • Hindi • English</div>
+                        <div class="contact-line"><strong>Service area</strong>Rajkot, Gujarat (edit this if you serve
+                            other areas)</div><a class="btn btn-primary" style="width:100%;margin-top:18px"
+                            href="https://wa.me/918780668363?text=Hello%2C%20I%20am%20interested%20in%20a%20home%20loan."
+                            target="_blank" rel="noopener">Chat on WhatsApp</a>
+                        <p class="disclaimer">Home Loan Service provides assistance and guidance. Loan approval,
+                            interest rates and terms are determined solely by the relevant lender. This website does not
+                            represent any bank unless explicitly authorized.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="wrap footer-row"><span>© <span id="year"></span> Home Loan Service. All rights
+                reserved.</span><span>Home Loan Assistance • Gujarati + English</span></div>
+    </footer>
+    <div class="mobile-cta"><a class="btn btn-whatsapp"
+            href="https://wa.me/918780668363?text=Hello%2C%20I%20need%20home%20loan%20assistance." target="_blank"
+            rel="noopener">WhatsApp</a><a class="btn btn-primary" href="#contact">Inquiry</a></div>
+    <script>
+        function rupees(n) {return new Intl.NumberFormat('en-IN', {style: 'currency', currency: 'INR', maximumFractionDigits: 0}).format(n)}
+        function calculateEMI() {const P = Number(document.getElementById('amount').value), annual = Number(document.getElementById('rate').value), years = Number(document.getElementById('years').value); if (!(P > 0) || annual < 0 || !(years > 0) || annual > 40) {alert('Please enter valid loan details.'); return } const n = years * 12, r = annual / 1200; const emi = r === 0 ? P / n : P * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1); document.getElementById('emiValue').textContent = rupees(emi); document.getElementById('emiDetails').textContent = 'Estimated total repayment: ' + rupees(emi * n) + ' • Estimated interest: ' + rupees(emi * n - P)}
+        document.getElementById('inquiryForm').addEventListener('submit', function (e) {e.preventDefault(); const name = document.getElementById('name').value.trim(), phone = document.getElementById('phone').value.trim(), need = document.getElementById('need').value, message = document.getElementById('message').value.trim(); const text = 'Home Loan Inquiry%0AName: ' + encodeURIComponent(name) + '%0AMobile: ' + encodeURIComponent(phone) + '%0ARequirement: ' + encodeURIComponent(need) + '%0AMessage: ' + encodeURIComponent(message); window.open('https://wa.me/919429685511?text=' + text, '_blank', 'noopener')});
+        document.getElementById('year').textContent = new Date().getFullYear(); calculateEMI();
+    </script>
+</body>
+
+</html>
